@@ -1,0 +1,10 @@
+
+
+
+
+export const DeskPage = ()=>{
+    return (
+        <>
+        </>
+    )
+}
