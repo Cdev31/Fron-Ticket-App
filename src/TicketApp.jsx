@@ -1,9 +1,10 @@
-import { RouterPages } from "./Pages/RouterPages"
+import { LayoutApp } from "./Pages/Layout"
+import { RouterApp } from "./Router/RouterApp"
 
 export const TicketApp = ()=> {
 
   return (
-    <RouterPages/>
+    <RouterApp/>
   )
 }
 
