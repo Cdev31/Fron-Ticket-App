@@ -15,22 +15,27 @@ export const LayoutApp = ({ children }) => {
 
   return (
     <Layout style={{ height: '100vh' }}>
-      <Sider hidden={false}>
+      <Sider hidden={false} collapsedWidth="0" breakpoint='md'>
         <div className="demo-logo-vertical" />
         <Menu theme='dark' mode='inline' defaultSelectedKeys={['1']}>
             <Menu.Item key="1" icon={<UserOutlined/>}>
-              <Link to="/login">
+              <Link to="/auth/login">
               Ingresar
               </Link>
             </Menu.Item>
             <Menu.Item key="2" icon={<UploadOutlined/>}>
-              <Link to="/desk">
+              <Link to="/home/desk">
               Escritorio
               </Link>
             </Menu.Item>
             <Menu.Item key="3" icon={<VideoCameraOutlined/>}>
-              <Link to="/ticket">
-              Ticket
+              <Link to="/client/create-ticket">
+              Crear Ticket
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="4" icon={<VideoCameraOutlined/>}>
+              <Link to="/client/queue">
+              Cola ticktets
               </Link>
             </Menu.Item>
         </Menu>
