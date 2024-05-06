@@ -1,9 +1,16 @@
 import { Row, Col, Typography, Button, Divider } from "antd"
 import { CloseCircleOutlined, RightOutlined } from "@ant-design/icons"
+import { useHideMenu } from "../Hooks/useHideMenu"
+import { useContext } from "react"
+import { UiContext } from "../Context/UiContext"
 
 const { Title, Text } = Typography
 
 export const DeskPage = ()=>{
+
+    useHideMenu( false )
+
+    const { logout } = useContext( UiContext )
     const exit = ()=>{}
     const onNextTicket = ()=>{}
     return (
@@ -22,7 +29,7 @@ export const DeskPage = ()=>{
               style={{ fontWeight:'bold' }}
               onClick={exit}
               >
-                <CloseCircleOutlined/>
+                <CloseCircleOutlined onClick={()=> logout()}/>
                 Salir
               </Button>
             </Col>

@@ -23,15 +23,8 @@ export const RouterApp = ()=>{
                    </Routes>
                 </PublicRoute>
             }/>
-
-            <Route path="/client/*" element={
-                <PublicRoute>
-                    <Routes>
-                        <Route path="/create-ticket" element={<CreateTicketPage/>} />
-                        <Route path="/queue" element={<QueuePage/>}/>
-                    </Routes>
-                </PublicRoute>
-            }/>
+            <Route path="/client/create-ticket" element={<CreateTicketPage/>} />
+            <Route path="/client/queue" element={<QueuePage/>}/>
         </Routes>
     )
 }

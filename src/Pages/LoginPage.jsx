@@ -1,23 +1,33 @@
 import { Button, Form, Input, InputNumber, Typography, Divider } from 'antd';
 import { SaveOutlined } from "@ant-design/icons"
 import { useNavigate } from "react-router-dom"
-
+import { useHideMenu } from '../Hooks/useHideMenu';
+import { useContext } from 'react';
+import { UiContext } from '../Context/UiContext';
 
 
 const { Title, Text } = Typography
 
 export const LoginPage = () => {
-    
+
+    useHideMenu( false )
+
+    const { login } = useContext( UiContext )
     const history = useNavigate()
 
-    const onFinish = (values) => {
-        console.log('Success:', values);
+    const onFinish = ({ Agente, Escritorio }) => {
+       
+        localStorage.setItem('agente', Agente)
+        localStorage.setItem('escritorio', Escritorio)
+        localStorage.setItem('auth', 'authenticated')
+        login()
         history('/home/desk')
       };
+
       const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
       };
 
+     
     return (
         <> 
         <Title style={{ textAlign:'center' }} level={1}>Ingresar</Title>

@@ -6,16 +6,20 @@ import {
 import { Link } from 'react-router-dom'
 
 import { Layout, Menu, theme } from 'antd';
+import { useContext } from 'react';
+import { UiContext } from '../Context/UiContext';
 
 const {  Sider, Content } = Layout;
 
 export const LayoutApp = ({ children }) => {
-   
+  
+  const { closeMenu } = useContext( UiContext )
+
   const { token: { colorBgContainer, borderRadiusLG }, } = theme.useToken();
 
   return (
     <Layout style={{ height: '100vh' }}>
-      <Sider hidden={false} collapsedWidth="0" breakpoint='md'>
+      <Sider hidden={closeMenu} collapsedWidth="0" breakpoint='md'>
         <div className="demo-logo-vertical" />
         <Menu theme='dark' mode='inline' defaultSelectedKeys={['1']}>
             <Menu.Item key="1" icon={<UserOutlined/>}>
